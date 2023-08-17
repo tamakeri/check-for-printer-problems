@@ -13,5 +13,5 @@ makine_tum_durum=duzenle.make_better(makine_tum_durum)
 
 current_time = time.strftime("%H:%M:%S",time.localtime())
 
-gönder=send_mail_with_gmail.send_message("cagdas20001@gmail.com","sencigot@gmail.com",adres+"\t"+makine_ad+"  "+current_time , makine_tum_durum,user_id='me')
+gönder=send_mail_with_gmail.send_message("sender@gmail.com","reciver@gmail.com",adres+"\t"+makine_ad+"  "+current_time , makine_tum_durum,user_id='me')
 
