@@ -1,17 +1,18 @@
-
-import time
 import send_mail_with_gmail
 import yazıcı_kontrol
 import duzenle
+import to_the_sql
+import datetime
+
+adres = "http://192.168.0.252:8000/rps/"
+
+ne_geldi = yazıcı_kontrol.go(adres)
+makine_tum_durum, makine_ad, makine_arıza = ne_geldi
+makine_tum_durum = duzenle.make_better(makine_tum_durum)
+current_time = datetime.datetime.now()
+formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')
+
+to_the_sql.sql_ekle(to_the_sql.sadece_numara(makine_tum_durum))
 
 
-adres="http://192.168.0.252:8000/rps/"
-
-ne_geldi=yazıcı_kontrol.go(adres)
-makine_tum_durum , makine_ad , makine_arıza = ne_geldi
-makine_tum_durum=duzenle.make_better(makine_tum_durum)
-
-current_time = time.strftime("%H:%M:%S",time.localtime())
-
-gönder=send_mail_with_gmail.send_message("sender@gmail.com","reciver@gmail.com",adres+"\t"+makine_ad+"  "+current_time , makine_tum_durum,user_id='me')
-
+gönder = send_mail_with_gmail.send_message("cagdas20001@gmail.com", "sencigot@gmail.com", adres+"\t"+makine_ad+"  "+str(formatted_time), makine_tum_durum, user_id='me')

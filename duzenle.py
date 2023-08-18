@@ -10,13 +10,11 @@ def make_better(a):
         if(flag):
             
                 b+=i+" "
-
     text=""
     for x in b :
         if (x==')'):
             text+=x+'\n'
         elif (b[sayac-4]=='L' and b[sayac]=='l' ):
-
             #trying to do above
             
             text+=x+'\n'
