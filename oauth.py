@@ -26,3 +26,4 @@ def get_g_service(service="gmail",ver="v1",scopes=['https://www.googleapis.com/a
     return build(service, ver, credentials=creds)
 
 
+get_g_service()
