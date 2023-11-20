@@ -13,17 +13,21 @@ def sql_ekle(evet):
 
 
 def sadece_numara(gelen):
-    veriler = []
+    veriler = [0,0,0,0]
+    sayaç=0
     for x in range(len(gelen)):
         if (gelen[x] == '%'):
             if (gelen[x-1].isdigit()):
                 if (gelen[x-2].isdigit()):
                     if (gelen[x-3].isdigit()):
-                        veriler.append(gelen[x-3]+gelen[x-2]+gelen[x-1])
+                        veriler[sayaç]=(gelen[x-3]+gelen[x-2]+gelen[x-1])
+                        sayaç=sayaç+1
                     else:
-                        veriler.append(gelen[x-2]+gelen[x-1])
+                        veriler[sayaç]=(gelen[x-2]+gelen[x-1])
+                        sayaç=sayaç+1
                 else:
-                    veriler.append(gelen[x-1])
+                    veriler[sayaç]=(gelen[x-1])
+                    sayaç=sayaç+1
             else:
                 pass
     return veriler
