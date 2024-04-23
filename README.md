@@ -1,11 +1,11 @@
 # check-for-printer-problems
 
-finished 
+#work in progress
 
+what this do ?
 
-what this do  
-checks local   printers   and look for toner levels adds to sql for later examing
+it uses google api of gmail api v1 to send email with contents are : 
+toner level
+machine has an arror problem now ?
 
-what it uses  uses selenium headless and sqlite..
-
-email sending service is  custom. uses yaanimail
+ this is a version 1
